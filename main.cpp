@@ -2,6 +2,7 @@
 using namespace std;
 
 bool checkPParity(string text);
+int gcd(int x, int y);
 
 struct Stack
 {
@@ -49,13 +50,21 @@ int main() {
     string text = "([(text[])])({})(<>)";
     
     if (checkPParity(text))
-        printf("Correct text parity\n");
+        cout << "Correct text parity" << endl;
     else
-        printf("Incorrect text parity\n");
+        cout << "Incorrect text parity" << endl;
     
-
+    cout << gcd(60, 24) << endl;
 
     return 0;
+}
+
+int gcd(int x, int y)
+{
+    if(y == 0)
+        return x;
+
+    gcd(y, x % y);
 }
 
 bool checkPParity(string text)
