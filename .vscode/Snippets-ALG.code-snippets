@@ -1,0 +1,35 @@
+{
+	"Base": {
+		"prefix": "base",
+		"body": [
+		"#include <iostream>",
+		"using namespace std;\n",
+		"int main() {\n",
+		"	return 0;",
+		"}"
+		],
+		"description": "Add a base C++ program"
+	},
+
+	"Stack Structure": {
+		"prefix": "stackstruct",
+		"body": [
+			"struct Stack",
+			"{",
+			"    int capacity = $1;",
+			"    int data[$2];",
+			"    int index = 0;",
+			"",
+			"    void push(int value)",
+			"    {",
+			"        if(index < capacity)",
+			"            data[index++] = value;",
+			"        else",
+			"            cout << \"Stack is full!\" << endl;",
+			"    }",
+			"    int get();",
+			"};"
+		],
+		"description": "Snippet for a basic Stack structure in C++"
+	}
+}
