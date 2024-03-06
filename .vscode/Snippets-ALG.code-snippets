@@ -5,7 +5,7 @@
 		"#include <iostream>",
 		"using namespace std;\n",
 		"int main() {\n",
-		"	return 0;",
+		"    return 0;",
 		"}"
 		],
 		"description": "Add a base C++ program"
@@ -17,7 +17,7 @@
 			"struct Stack",
 			"{",
 			"    int capacity = $1;",
-			"    int data[$2];",
+			"    int data[$1];",
 			"    int index = 0;",
 			"",
 			"    void push(int value)",
@@ -27,9 +27,43 @@
 			"        else",
 			"            cout << \"Stack is full!\" << endl;",
 			"    }",
-			"    int get();",
+			"",
+			"    int pop()",
+			"    {",
+			"        if(index > 0)",
+			"            return data[--index];",
+			"        else",
+			"        {",
+			"            cout << \"Stack is empty!\" << endl;",
+			"            return INT32_MIN;",
+			"        }",
+			"    }",
+			"",
+			"    int top()",
+			"    {",
+			"        if(index > 0)",
+			"            return data[index - 1];",
+			"        else",
+			"        {",
+			"            cout << \"Stack is empty!\" << endl;",
+			"            return INT32_MIN;",
+			"        }",
+			"    }",
+			"",
+			"    bool isEmpty()",
+			"    {",
+			"        return !index;",
+			"    }",
 			"};"
 		],
 		"description": "Snippet for a basic Stack structure in C++"
+	},
+
+	"Command line out":{
+		"prefix": "cout",
+		"body": [
+			"cout << $1 << endl;"
+		],
+		"description": "Add a command line output"
 	}
 }
