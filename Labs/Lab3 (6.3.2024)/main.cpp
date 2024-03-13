@@ -4,6 +4,7 @@ using namespace std;
 int maxArr(int *arr, int N);
 bool isUnique(int *arr, int N);
 int factorial(int x);
+//factorial complexity - M(N) = M(N - i) + i -> i = N -> M(0) + N -> N
 
 int main() {
     int N = 10;
